@@ -1,5 +1,7 @@
 package com.example.grahaksuraksha.WebService;
 
+import com.example.grahaksuraksha.Models.FraudCheckRequest;
+import com.example.grahaksuraksha.Models.FraudCheckResponse;
 import com.example.grahaksuraksha.Models.User;
 
 import retrofit2.Call;
@@ -16,6 +18,6 @@ public interface RetrofitApi {
         Call<User> login(@Query("email") String email, @Query("password") String password);
 
         @POST("/checkUpi")
-        Call<Boolean> fraudCheck(@Body String upiid);
+        Call<FraudCheckResponse> fraudCheck(@Body FraudCheckRequest req);
 
 }

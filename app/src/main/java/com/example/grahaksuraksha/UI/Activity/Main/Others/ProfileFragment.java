@@ -1,4 +1,4 @@
-package com.example.grahaksuraksha.UI.Activity.Main;
+package com.example.grahaksuraksha.UI.Activity.Main.Others;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 
 import com.example.grahaksuraksha.R;
 import com.example.grahaksuraksha.UI.Activity.LoginActivity;
-import com.example.grahaksuraksha.databinding.FragmentHomeBinding;
 import com.example.grahaksuraksha.databinding.FragmentProfileBinding;
 
 
@@ -32,6 +31,18 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
+        binding.fraudComplainbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), FraudComplainActivity.class));
+            }
+        });
+
+
+
         binding.profileLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
