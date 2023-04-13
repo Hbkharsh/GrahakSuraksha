@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Activity.Main.ProfileFragment">
+    tools:context=".UI.Activity.Main.Others.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayout"
@@ -128,7 +128,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TextView
-        android:id="@+id/textView70"
+        android:id="@+id/fraudComplainbtn"
         android:layout_width="323dp"
         android:layout_height="64dp"
         android:layout_marginTop="32dp"
@@ -145,7 +145,7 @@
         android:background="@drawable/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView70" />
+        app:layout_constraintTop_toBottomOf="@+id/fraudComplainbtn" />
 
     <TextView
         android:id="@+id/textView72"
@@ -183,11 +183,11 @@
         android:id="@+id/imageView20"
         android:layout_width="57dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView70"
-        app:layout_constraintEnd_toEndOf="@+id/textView70"
+        app:layout_constraintBottom_toBottomOf="@+id/fraudComplainbtn"
+        app:layout_constraintEnd_toEndOf="@+id/fraudComplainbtn"
         app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toStartOf="@+id/textView70"
-        app:layout_constraintTop_toTopOf="@+id/textView70"
+        app:layout_constraintStart_toStartOf="@+id/fraudComplainbtn"
+        app:layout_constraintTop_toTopOf="@+id/fraudComplainbtn"
         app:layout_constraintVertical_bias="0.375"
         app:srcCompat="@drawable/logo_complain" />
 
@@ -228,11 +228,11 @@
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView70"
-        app:layout_constraintEnd_toEndOf="@+id/textView70"
+        app:layout_constraintBottom_toBottomOf="@+id/fraudComplainbtn"
+        app:layout_constraintEnd_toEndOf="@+id/fraudComplainbtn"
         app:layout_constraintHorizontal_bias="0.235"
         app:layout_constraintStart_toEndOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/textView70"
+        app:layout_constraintTop_toTopOf="@+id/fraudComplainbtn"
         app:layout_constraintVertical_bias="0.531" />
 
     <TextView

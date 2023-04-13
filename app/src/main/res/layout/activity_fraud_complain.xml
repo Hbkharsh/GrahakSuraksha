@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Activity.Main.Others.FraudComplainActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <TextView
+                android:id="@+id/editTextTextPersonName7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="User details"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:ems="10"
+                android:hint="User Name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName7"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:hint="Phone number"
+                android:inputType="phone"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:hint="email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:hint="State"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+            <EditText
+                android:id="@+id/district"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:hint="District"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName10"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+
+            <EditText
+                android:id="@+id/nearestpolicestation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:hint="Nearest police station"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPostalAddress2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress2" />
+
+            <EditText
+                android:id="@+id/editTextTextPostalAddress2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:ems="10"
+                android:hint="Zip code"
+                android:inputType="textPostalAddress"
+                app:layout_constraintStart_toStartOf="@+id/district"
+                app:layout_constraintTop_toBottomOf="@+id/district" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="180dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="30dp"
+                android:hint="Types of fraud"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frauddetiallabel"
+               >
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/frauddetiallabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="24dp"
+                android:text="Fraud details"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nearestpolicestation" />
+
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="172dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="36dp"
+                android:ems="10"
+                android:hint="Date"
+                android:inputType="date"
+                app:layout_constraintStart_toStartOf="@+id/editTextNumber3"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber3"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="156dp"
+                android:layout_height="38dp"
+                android:ems="10"
+                android:hint="Time"
+                android:inputType="time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.664"
+                app:layout_constraintStart_toEndOf="@+id/editTextDate"
+                app:layout_constraintTop_toTopOf="@+id/editTextDate"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/editTextNumber3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:ems="10"
+                android:hint="Amount"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="@+id/frauddetiallabel"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="188dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="90dp"
+                android:ems="10"
+                android:hint="Transaction details"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editTextDate"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+                tools:ignore="TouchTargetSizeCheck" >
+
+                <AutoCompleteTextView
+                    android:id="@+id/edtTransactionDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="188dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:ems="10"
+                android:hint="Mode of payment"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck" >
+                <AutoCompleteTextView
+                    android:id="@+id/edtModeOfPayement"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="upload your fraud related photo\n Like- Bank statement ,screenshot of transaction"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="188dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Phone number"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="135dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+                tools:text="If Fraudlent call" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="120dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="56dp"
+                android:text="Submit"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="199dp"
+                android:layout_height="42dp"
+                android:text="*Click here for complaint against fraud"
+                app:layout_constraintStart_toStartOf="@+id/button2"
+                app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount will be debited from your account"
+                app:layout_constraintStart_toStartOf="@+id/editTextNumber3"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
