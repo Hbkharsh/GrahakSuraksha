@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_report" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.grahaksuraksha.UI.Activity.Main.ProfileFragment"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.Others.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <activity

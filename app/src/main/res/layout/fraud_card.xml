@@ -56,9 +56,9 @@
                 android:layout_height="70dp"
                 android:visibility="visible"
                 android:layout_gravity="center"
-                card_view:srcCompat="@drawable/navigation_profile_24"
-                tools:srcCompat="@drawable/navigation_profile_24"
-                card_view:tint="@color/purple_200" />
+                card_view:srcCompat="@drawable/navigation_profile_24"/>
+<!--                card_view:tint="@color/purple_200" -->
+
 <!--            Todo-->
 
         </LinearLayout>
