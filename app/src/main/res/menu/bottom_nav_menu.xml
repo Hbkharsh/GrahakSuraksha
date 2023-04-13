@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/navigation_home_24"
+        android:enabled="true"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_upi"
+        android:icon="@drawable/navigation_upi"
+        android:enabled="true"
+        android:title="UPI" />
+
+    <item
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/navigation_report_24"
+        android:enabled="true"
+        android:title="Report" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/navigation_profile_24"
+        android:enabled="true"
+        android:title="Profile" />
+
+</menu>

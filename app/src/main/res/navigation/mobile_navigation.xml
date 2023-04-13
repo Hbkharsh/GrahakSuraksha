@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_upi"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.Upi.UpiFragment"
+        android:label="fragment_upi"
+        tools:layout="@layout/fragment_upi" >
+        <action
+            android:id="@+id/action_navigation_upi_to_payementActivity"
+            app:destination="@id/payementActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <activity
+        android:id="@+id/payementActivity"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.Upi.PayementActivity"
+        android:label="activity_payement"
+        tools:layout="@layout/activity_payement" />
+</navigation>
