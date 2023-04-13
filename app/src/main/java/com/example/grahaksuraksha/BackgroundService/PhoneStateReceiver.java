@@ -14,7 +14,17 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.grahaksuraksha.Models.FraudCheckRequest;
+import com.example.grahaksuraksha.Models.FraudCheckResponse;
 import com.example.grahaksuraksha.R;
+import com.example.grahaksuraksha.UI.Activity.Main.Upi.PayementActivity;
+import com.example.grahaksuraksha.WebService.RetrofitApi;
+import com.example.grahaksuraksha.WebService.RetrofitClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PhoneStateReceiver extends BroadcastReceiver {
 
@@ -48,13 +58,10 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 
             Toast t= Toast.makeText(context,"Rohit call from" + number,Toast.LENGTH_LONG);
             t.show();
-//
-//            Intent i = new Intent(context, MainActivity2.class);
-//            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-//
-//            context.startActivity(i);
-            showCustomPopupMenu1(context,intent);
+            if(number!=null){
+                checkFraud(context,number);
+            }
+            //showCustomPopupMenu1(context,number);
         }
         if(state.equals(TelephonyManager.EXTRA_STATE_IDLE)){
             Toast t= Toast.makeText(context,"My call ended ",Toast.LENGTH_SHORT);
@@ -69,16 +76,52 @@ public class PhoneStateReceiver extends BroadcastReceiver {
         }
     }
 
-    private void showCustomPopupMenu1(Context context, Intent intent) {
+    private void checkFraud(Context context,String number) {
+        RetrofitApi retrofitApi = RetrofitClient.getRetrofitApiService();
+
+        FraudCheckRequest req = new FraudCheckRequest(number,"");
+        Call<FraudCheckResponse> apiCall = retrofitApi.fraudCheck(req);
+
+        apiCall.enqueue(new Callback<FraudCheckResponse>() {
+            @Override
+            public void onResponse(Call<FraudCheckResponse> call, Response<FraudCheckResponse> response) {
+                if(response.isSuccessful()&& response.code()==200 && response.body() != null){
+                    FraudCheckResponse res = response.body();
+                    if(res.isIs_fraud()){
+                        showCustomPopupMenu1(context,number,res);
+                    }
+
+                }else{
+                    Log.i(TAG, "onResponse: Not Success "+response.errorBody() );
+                }
+            }
+
+            @Override
+            public void onFailure(Call<FraudCheckResponse> call, Throwable t) {
+                Log.i(TAG, "onFailure: "+t.getMessage());
+
+            }
+        });
+
+
+
+    }
+
+    private void showCustomPopupMenu1(Context context, String number,FraudCheckResponse res) {
 
         wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         viewgroup = (ViewGroup) View.inflate(context, R.layout.fraud_card, null);
 
         TextView title = (TextView) viewgroup.findViewById(R.id.name);
         TextView phone = (TextView) viewgroup.findViewById(R.id.no);
-        String number = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER);
-        title.setText("" + "Potential Fraudster");
-        phone.setText("" + number);
+        if(res.isIs_gov_verified()){
+            title.setText("Potential Fraudster");
+            phone.setText("Goverment Verified");
+        }else{
+            title.setText("Potential Fraudster");
+            phone.setText("Reported by "+res.getNumber_of_userReported()+ " user");
+        }
+
         int LAYOUT_FLAG;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
@@ -110,19 +153,6 @@ public class PhoneStateReceiver extends BroadcastReceiver {
             }
         }, 8000);
 
-//        // To remove the view  once the dialer app is closed.
-//        if (intent.getAction().equals("android.intent.action.PHONE_STATE")) {
-//            String state1 = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
-//            if (state1.equals(TelephonyManager.EXTRA_STATE_IDLE)) {
-//                if (viewgroup != null) {
-//                    wm.removeView(viewgroup);
-//                    viewgroup = null;
-//                    Log.v("Call", " wm.removeView(viewgroup);.................");
-//                }
-//                if (viewgroup != null)
-//                    viewgroup.removeAllViewsInLayout();
-//            }
-//        }
 
     }
 }
