@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_report"
-        android:name="com.example.grahaksuraksha.UI.Activity.Main.ReportFragment"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.Report.ReportFragment"
         android:label="fragment_report"
         tools:layout="@layout/fragment_report" />
     <fragment
