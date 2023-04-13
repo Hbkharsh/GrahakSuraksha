@@ -87,6 +87,7 @@
         android:layout_width="271dp"
         android:layout_height="55dp"
         android:layout_marginTop="200dp"
+        android:background="@drawable/button"
         android:text="Sign UP"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -95,14 +96,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="139dp"
         android:layout_height="15dp"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="283dp"
         android:text="Already a User ?"
         android:textColor="#A7A7A7"
@@ -117,13 +119,14 @@
         android:layout_width="135dp"
         android:layout_height="16dp"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="68dp"
         android:text="Go to LogIn page"
         android:textColor="#3BA8BE"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
