@@ -21,6 +21,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrahakSuraksha"
         tools:targetApi="31">
+
+        <activity
+            android:name=".UI.Activity.Main.Report.ReportActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.Activity.Main.Upi.PayementActivity"
             android:exported="false" />
