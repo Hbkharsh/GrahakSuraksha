@@ -40,6 +40,12 @@ public class ProfileFragment extends Fragment {
                 startActivity(new Intent(getContext(), FraudComplainActivity.class));
             }
         });
+        binding.complainStatusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ComplainStatusActivity.class));
+            }
+        });
 
 
 

@@ -1,15 +1,18 @@
 package com.example.grahaksuraksha.Utility;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.example.grahaksuraksha.Models.User;
 import com.example.grahaksuraksha.UI.Activity.SignupActivity;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 
 public class UtilService {
 
-    public static final String BASE_URL = "http://65.1.132.68:8004";
+    public static final String BASE_URL = "https://4bd5-2405-201-3006-5bcb-a179-bc72-f69b-7d76.ngrok-free.app/";
 
     public void hideKeyboard(View view ,Context context)
     {
@@ -23,6 +26,17 @@ public class UtilService {
                     context.getSystemService(Context.INPUT_METHOD_SERVICE);
             manager.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+    }
+
+    public User getUserFromSharedPref(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userSnapshot", Context.MODE_PRIVATE);
+        String userJson = sharedPreferences.getString("user", null);
+        if (userJson != null) {
+            Gson gson = new Gson();
+            User user = gson.fromJson(userJson, User.class);
+            return  user;
+        }
+        return null;
     }
 
     public void showSnackbar(View view, String text) {

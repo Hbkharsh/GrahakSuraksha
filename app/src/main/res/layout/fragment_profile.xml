@@ -148,7 +148,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fraudComplainbtn" />
 
     <TextView
-        android:id="@+id/textView72"
+        android:id="@+id/complainStatusBtn"
         android:layout_width="323dp"
         android:layout_height="64dp"
         android:layout_marginTop="32dp"
@@ -165,7 +165,7 @@
         android:background="@drawable/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView72" />
+        app:layout_constraintTop_toBottomOf="@+id/complainStatusBtn" />
 
     <ImageView
         android:id="@+id/imageView19"
@@ -240,7 +240,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:text="Reported number"
+        android:text="My All Reports"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -262,10 +262,10 @@
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView72"
-        app:layout_constraintEnd_toEndOf="@+id/textView72"
+        app:layout_constraintBottom_toBottomOf="@+id/complainStatusBtn"
+        app:layout_constraintEnd_toEndOf="@+id/complainStatusBtn"
         app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="@+id/textView72" />
+        app:layout_constraintTop_toTopOf="@+id/complainStatusBtn" />
 
     <ImageView
         android:id="@+id/imageView23"
@@ -284,7 +284,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:text="mark exit"
+        android:text="Online Fir"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -306,11 +306,11 @@
         android:id="@+id/imageView15"
         android:layout_width="57dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView72"
+        app:layout_constraintBottom_toBottomOf="@+id/complainStatusBtn"
         app:layout_constraintEnd_toStartOf="@+id/textView76"
         app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="@+id/textView72"
-        app:layout_constraintTop_toTopOf="@+id/textView72"
+        app:layout_constraintStart_toStartOf="@+id/complainStatusBtn"
+        app:layout_constraintTop_toTopOf="@+id/complainStatusBtn"
         app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/logo_complain" />
 </androidx.constraintlayout.widget.ConstraintLayout>

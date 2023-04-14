@@ -21,6 +21,7 @@ import com.example.grahaksuraksha.UI.Activity.Main.MainActivity;
 import com.example.grahaksuraksha.Utility.UtilService;
 import com.example.grahaksuraksha.WebService.RetrofitApi;
 import com.example.grahaksuraksha.WebService.RetrofitClient;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,7 +79,9 @@ public class LoginActivity extends AppCompatActivity {
 
         RetrofitApi retrofitApi = RetrofitClient.getRetrofitApiService();
 
-        Call<User> userCall = retrofitApi.login(email,password);
+        User user = new User("",email,password,"");
+
+        Call<User> userCall = retrofitApi.login(user);
 
         userCall.enqueue(new Callback<User>() {
             @Override
@@ -89,14 +92,12 @@ public class LoginActivity extends AppCompatActivity {
                     // Save user data in SharedPreferences
                     SharedPreferences sharedPreferences = getSharedPreferences("userSnapshot", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-//
-//                    // Convert user object to JSON string using Gson library
-//                    Gson gson = new Gson();
-//                    String userJson = gson.toJson(user);
 
+                    // Convert user object to JSON string using Gson library
+                    Gson gson = new Gson();
+                    String userJson = gson.toJson(user);
                     // Save user JSON string in SharedPreferences
-                    editor.putString("name", user.getName());
-                    editor.putString("email", user.getEmail());
+                    editor.putString("user", userJson);
                     editor.apply();
 
                     progressBar.setVisibility(View.GONE);
@@ -142,8 +143,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
 
         SharedPreferences snapshot_pref = getSharedPreferences("userSnapshot", MODE_PRIVATE);
-        String name = snapshot_pref.getString("name", null);
-        if (name != null) {
+        String userJson = snapshot_pref.getString("user", null);
+        if (userJson != null) {
             // User already exists, redirect to main page
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();

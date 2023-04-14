@@ -44,6 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:layout_constraintTop_toBottomOf="@id/appbar"
+
+        android:paddingBottom="70dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,7 +71,7 @@
                 tools:layout_editor_absoluteY="16dp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/edtToReport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
@@ -89,8 +91,8 @@
                 android:ems="10"
                 android:hint="Phone number"
                 android:inputType="phone"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                app:layout_constraintStart_toStartOf="@+id/edtToReport"
+                app:layout_constraintTop_toBottomOf="@+id/edtToReport"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
 
@@ -317,7 +319,7 @@
                 tools:text="If Fraudlent call" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/reportButton"
                 android:layout_width="120dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="56dp"
@@ -329,9 +331,10 @@
                 android:id="@+id/textView3"
                 android:layout_width="199dp"
                 android:layout_height="42dp"
+                android:paddingBottom="70dp"
                 android:text="*Click here for complaint against fraud"
-                app:layout_constraintStart_toStartOf="@+id/button2"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
+                app:layout_constraintStart_toStartOf="@+id/reportButton"
+                app:layout_constraintTop_toBottomOf="@+id/reportButton" />
 
             <TextView
                 android:id="@+id/textView4"

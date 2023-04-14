@@ -20,6 +20,7 @@ import com.example.grahaksuraksha.UI.Activity.Main.MainActivity;
 import com.example.grahaksuraksha.Utility.UtilService;
 import com.example.grahaksuraksha.WebService.RetrofitApi;
 import com.example.grahaksuraksha.WebService.RetrofitClient;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,7 +79,7 @@ public class SignupActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         RetrofitApi retrofitApi = RetrofitClient.getRetrofitApiService();
 
-        User user = new User(name,email,password);
+        User user = new User(name,email,password,password);
         Call<User> userCall = retrofitApi.register(user);
 
         userCall.enqueue(new Callback<User>() {
@@ -87,13 +88,17 @@ public class SignupActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.code()==200 && response.body() != null) {
                     User user = response.body();
 
-
                     // Save user data in SharedPreferences
                     SharedPreferences sharedPreferences = getSharedPreferences("userSnapshot", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("name", user.getName());
-                    editor.putString("email", user.getEmail());
+
+                    // Convert user object to JSON string using Gson library
+                    Gson gson = new Gson();
+                    String userJson = gson.toJson(user);
+                    // Save user JSON string in SharedPreferences
+                    editor.putString("user", userJson);
                     editor.apply();
+
 
                     progressBar.setVisibility(View.GONE);
                     // Show success message and navigate to next screen
@@ -162,10 +167,10 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         SharedPreferences snapshot_pref = getSharedPreferences("userSnapshot", MODE_PRIVATE);
-        String name = snapshot_pref.getString("name", null);
-        if (name != null) {
+
+        String userJson = snapshot_pref.getString("user", null);
+        if (userJson != null) {
             // User already exists, redirect to main page
             startActivity(new Intent(SignupActivity.this, MainActivity.class));
             finish();

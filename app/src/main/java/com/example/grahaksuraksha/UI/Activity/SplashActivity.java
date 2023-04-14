@@ -49,6 +49,7 @@ public class SplashActivity extends AppCompatActivity {
 
             if(isFirstTime){
                 SharedPreferences.Editor editor = onBoardingScreen.edit();
+                //Todo change to false
                 editor.putBoolean("firstTime", true);
                 editor.apply();
                 startActivity(new Intent(SplashActivity.this, OnboardingActivity.class));

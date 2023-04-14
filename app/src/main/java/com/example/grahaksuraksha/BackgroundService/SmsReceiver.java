@@ -48,9 +48,9 @@ public class SmsReceiver extends BroadcastReceiver {
                     }
                     String message = messageBuilder.toString();
                     Log.d("MySmsReceiver", "Message received: " + message + ", from: " + sender);
-                    // TODO: Handle the received SMS
+
                     if(sender!=null){
-                        checkFraud(context,sender);
+                        checkFraud(context,sender.substring(3));
                     }
                     Toast.makeText(context,"Message received: " + message + ", from: " + sender,Toast.LENGTH_LONG)
                             .show();
@@ -137,7 +137,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 if (viewgroup != null)
                     viewgroup.removeAllViewsInLayout();
             }
-        }, 8000);
+        }, 5000);
 
 
     }

@@ -61,7 +61,6 @@ public class PayementActivity extends AppCompatActivity {
                     upiid = Objects.requireNonNull(binding.edtUpiid.getText()).toString();
                     new UtilService().hideKeyboard(binding.layout,PayementActivity.this);
                      if(validateUPI(binding.layout)){
-                         //TODO api call  for upi id
                          checkFraud(upiid);
                          Toast.makeText(PayementActivity.this,"Do aPi call ",Toast.LENGTH_LONG).show();
                      }

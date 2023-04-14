@@ -2,14 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.grahaksuraksha">
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
-
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,9 +21,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrahakSuraksha"
         tools:targetApi="31">
-
+        <activity
+            android:name=".UI.Activity.Main.Others.ComplainStatusActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.Activity.Main.Report.ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activity.Main.Others.FraudComplainActivity"
             android:exported="false" />
         <activity
             android:name=".UI.Activity.Main.Upi.PayementActivity"
@@ -62,7 +67,8 @@
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".BackgroundService.SmsReceiver"
+        <receiver
+            android:name=".BackgroundService.SmsReceiver"
             android:exported="true"
             android:permission="android.permission.BROADCAST_SMS">
             <intent-filter>

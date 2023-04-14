@@ -59,7 +59,8 @@ public class PhoneStateReceiver extends BroadcastReceiver {
             Toast t= Toast.makeText(context,"Rohit call from" + number,Toast.LENGTH_LONG);
             t.show();
             if(number!=null){
-                checkFraud(context,number);
+
+                checkFraud(context, number.substring(3));
             }
             //showCustomPopupMenu1(context,number);
         }
@@ -151,7 +152,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
                 if (viewgroup != null)
                     viewgroup.removeAllViewsInLayout();
             }
-        }, 8000);
+        }, 5000);
 
 
     }

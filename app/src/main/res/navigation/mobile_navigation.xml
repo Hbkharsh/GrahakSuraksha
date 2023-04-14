@@ -23,7 +23,11 @@
         android:id="@+id/navigation_report"
         android:name="com.example.grahaksuraksha.UI.Activity.Main.Report.ReportFragment"
         android:label="fragment_report"
-        tools:layout="@layout/fragment_report" />
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_navigation_report_to_reportActivity"
+            app:destination="@id/reportActivity" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.grahaksuraksha.UI.Activity.Main.Others.ProfileFragment"
@@ -34,4 +38,14 @@
         android:name="com.example.grahaksuraksha.UI.Activity.Main.Upi.PayementActivity"
         android:label="activity_payement"
         tools:layout="@layout/activity_payement" />
+    <activity
+        android:id="@+id/reportActivity"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.Report.ReportActivity"
+        android:label="activity_report"
+        tools:layout="@layout/activity_report" />
+    <activity
+        android:id="@+id/complainStatusActivity"
+        android:name="com.example.grahaksuraksha.UI.Activity.Main.Others.ComplainStatusActivity"
+        android:label="activity_complain_status"
+        tools:layout="@layout/activity_complain_status" />
 </navigation>

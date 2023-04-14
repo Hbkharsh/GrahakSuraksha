@@ -15,9 +15,10 @@ import android.widget.Button;
 
 import com.example.grahaksuraksha.R;
 import com.example.grahaksuraksha.UI.Activity.LoginActivity;
+import com.example.grahaksuraksha.UI.Activity.SignupActivity;
 import com.example.grahaksuraksha.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
@@ -37,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+        //Todo uncomment
+//        SharedPreferences snapshot_pref = getSharedPreferences("userSnapshot", MODE_PRIVATE);
+//
+//        String userJson = snapshot_pref.getString("user", null);
+//        if (userJson == null) {
+//            // User already exists, redirect to main page
+//            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//            finish();
+//        }
+    }
 
 }

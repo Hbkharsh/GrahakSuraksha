@@ -3,14 +3,29 @@ package com.example.grahaksuraksha.Models;
 import androidx.annotation.NonNull;
 
 public class User {
+    private String userId;
     String name ;
     String email;
     String password;
+    String confirmPassword;
 
-    public User(String name, String email, String password) {
+    public User(String name, String email, String password,String confirmPassword) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.confirmPassword=confirmPassword;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     public String getName() {
