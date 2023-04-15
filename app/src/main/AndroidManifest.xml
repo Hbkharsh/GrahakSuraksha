@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,13 +21,21 @@
         android:theme="@style/Theme.GrahakSuraksha"
         tools:targetApi="31">
         <activity
-            android:name=".UI.Activity.Main.Others.ComplainStatusActivity"
-            android:exported="false" />
+            android:name=".UI.Activity.Main.Report.LeaderboardActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UI.Activity.Main.Report.AchievementActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".UI.Activity.Main.Report.ReportActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Activity.Main.Others.FraudComplainActivity"
             android:exported="false" />
         <activity
             android:name=".UI.Activity.Main.Upi.PayementActivity"
