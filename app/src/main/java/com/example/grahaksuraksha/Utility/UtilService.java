@@ -12,7 +12,8 @@ import com.google.gson.Gson;
 
 public class UtilService {
 
-    public static final String BASE_URL = "https://4bd5-2405-201-3006-5bcb-a179-bc72-f69b-7d76.ngrok-free.app/";
+       public static final String BASE_URL = "https://grahaksuraksha-api.onrender.com/";
+  //  public static final String BASE_URL = "https://10b3-2405-201-3006-5bcb-5574-cc2f-ce5e-7a1.ngrok-free.app/";
 
     public void hideKeyboard(View view ,Context context)
     {

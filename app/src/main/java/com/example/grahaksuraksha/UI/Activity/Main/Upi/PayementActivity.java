@@ -7,7 +7,6 @@ import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -17,16 +16,15 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.grahaksuraksha.Models.FraudCheckRequest;
 import com.example.grahaksuraksha.Models.FraudCheckResponse;
-import com.example.grahaksuraksha.Models.User;
 import com.example.grahaksuraksha.R;
 import com.example.grahaksuraksha.Utility.UtilService;
 import com.example.grahaksuraksha.WebService.RetrofitApi;
 import com.example.grahaksuraksha.WebService.RetrofitClient;
 import com.example.grahaksuraksha.databinding.ActivityPayementBinding;
+import com.google.gson.Gson;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -45,6 +43,7 @@ public class PayementActivity extends AppCompatActivity {
     String amount;
     WindowManager wm;
     ViewGroup viewgroup;
+    Boolean fraud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +56,11 @@ public class PayementActivity extends AppCompatActivity {
         binding.edtUpiid.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if ( i == EditorInfo.IME_ACTION_DONE) {
+                if ( i == EditorInfo.IME_ACTION_DONE ) {
                     upiid = Objects.requireNonNull(binding.edtUpiid.getText()).toString();
                     new UtilService().hideKeyboard(binding.layout,PayementActivity.this);
                      if(validateUPI(binding.layout)){
                          checkFraud(upiid);
-                         Toast.makeText(PayementActivity.this,"Do aPi call ",Toast.LENGTH_LONG).show();
                      }
                     return true;
                 }
@@ -80,6 +78,9 @@ public class PayementActivity extends AppCompatActivity {
 
                 try {
                     if(validate(view)){
+//                       checkFraud(upiid);
+//                        Log.i(TAG, "onClick: "+fraud);
+//                       if(!fraud)
                         PayementGatewayStart();
                     }
                 } catch (AppNotFoundException e) {
@@ -152,46 +153,50 @@ public class PayementActivity extends AppCompatActivity {
     }
 
     private void checkFraud(String upiid) {
+
         RetrofitApi retrofitApi = RetrofitClient.getRetrofitApiService();
 
-        FraudCheckRequest req = new FraudCheckRequest("",upiid);
+        FraudCheckRequest req = new FraudCheckRequest("", upiid);
         Call<FraudCheckResponse> apiCall = retrofitApi.fraudCheck(req);
 
         apiCall.enqueue(new Callback<FraudCheckResponse>() {
             @Override
             public void onResponse(Call<FraudCheckResponse> call, Response<FraudCheckResponse> response) {
-                if(response.isSuccessful()&& response.code()==200 && response.body() != null){
+                if (response.isSuccessful() && response.code() == 200 && response.body() != null) {
                     FraudCheckResponse res = response.body();
-                    if(res.isIs_fraud()){
+                    Log.i(TAG, "onResponse: " + new Gson().toJson(response.body()));
+                    if (res.isIs_fraud()) {
+
                         showAlertCard(PayementActivity.this, res);
                     }
-                }else{
-                    Log.i(TAG, "onResponse: Not Success "+response.errorBody() );
+                } else {
+                    Log.i(TAG, "onResponse: Not Success " + response.errorBody());
                 }
             }
 
             @Override
             public void onFailure(Call<FraudCheckResponse> call, Throwable t) {
-                Log.i(TAG, "onFailure: "+t.getMessage());
+                Log.i(TAG, "onFailure: " + t.getMessage());
 
             }
         });
-
-
+//        Log.i(TAG, "checkFraud: +++++++++++++++++++"+ fraud);
 
     }
 
     private void showAlertCard(Context context,FraudCheckResponse res) {
-
+        Log.i(TAG, "showAlertCard: "+ "Calling");
          wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
          viewgroup = (ViewGroup) View.inflate(context, R.layout.fraud_card, null);
 
         TextView title = viewgroup.findViewById(R.id.name);
         TextView phone = viewgroup.findViewById(R.id.no);
         if(res.isIs_gov_verified()){
+            Log.i(TAG, "showAlertCard: "+ "Calling1");
             title.setText("Potential Fraudster");
             phone.setText("Goverment Verified");
         }else{
+            Log.i(TAG, "showAlertCard: "+ "Calling3");
             title.setText("Potential Fraudster");
             phone.setText("Reported by "+res.getNumber_of_userReported()+ " user");
         }
@@ -219,6 +224,7 @@ public class PayementActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Log.i(TAG, "showAlertCard: "+ "Calling5");
                 // Do something after 5s = 5000ms
                 if (viewgroup != null) {
                     wm.removeView(viewgroup);

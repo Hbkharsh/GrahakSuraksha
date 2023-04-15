@@ -3,7 +3,7 @@ package com.example.grahaksuraksha.Models;
 import androidx.annotation.NonNull;
 
 public class User {
-    private String userId;
+    private String _id;
     String name ;
     String email;
     String password;
@@ -17,7 +17,7 @@ public class User {
     }
 
     public String getUserId() {
-        return userId;
+        return _id;
     }
 
     public String getConfirmPassword() {

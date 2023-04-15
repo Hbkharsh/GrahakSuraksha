@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -29,6 +30,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String TAG = "LoginActivity";
     private TextView registerBtn;
     private EditText email_ET, password_ET;
     private Button loginBtn;
@@ -88,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful() && response.code() == 200 && response.body() != null) {
                     User user = response.body();
+                    Log.i(TAG, "onResponse:after api call "+response.body()+response.message()+response);
 
                     // Save user data in SharedPreferences
                     SharedPreferences sharedPreferences = getSharedPreferences("userSnapshot", Context.MODE_PRIVATE);
@@ -96,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                     // Convert user object to JSON string using Gson library
                     Gson gson = new Gson();
                     String userJson = gson.toJson(user);
+                    Log.i(TAG, "onResponse:chceking userJson "+userJson);
                     // Save user JSON string in SharedPreferences
                     editor.putString("user", userJson);
                     editor.apply();

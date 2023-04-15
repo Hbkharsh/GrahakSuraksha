@@ -43,14 +43,14 @@ public class  MainActivity extends AppCompatActivity {
         super.onStart();
 
         //Todo uncomment
-//        SharedPreferences snapshot_pref = getSharedPreferences("userSnapshot", MODE_PRIVATE);
-//
-//        String userJson = snapshot_pref.getString("user", null);
-//        if (userJson == null) {
-//            // User already exists, redirect to main page
-//            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-//            finish();
-//        }
+        SharedPreferences snapshot_pref = getSharedPreferences("userSnapshot", MODE_PRIVATE);
+
+        String userJson = snapshot_pref.getString("user", null);
+        if (userJson == null) {
+            // User not exists, redirect to main page
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
     }
 
 }

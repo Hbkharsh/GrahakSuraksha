@@ -21,7 +21,7 @@ public interface RetrofitApi {
         @POST("/fraud")
         Call<FraudCheckResponse> fraudCheck(@Body FraudCheckRequest req);
 
-        @POST("/reportSubmit")
+        @POST("/report")
         Call<Void> submitReport(@Body ReportModel reportModel);
 
 }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SignupActivity extends AppCompatActivity {
+    private static final String TAG = "Signup Activivty";
     private TextView loginBtn;
     private EditText name_ET, email_ET, password_ET;
     private Button registerBtn;
@@ -87,7 +89,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful() && response.code()==200 && response.body() != null) {
                     User user = response.body();
-
+                    Log.i(TAG, "onResponse: after logon" + new Gson().toJson(response.body()));
                     // Save user data in SharedPreferences
                     SharedPreferences sharedPreferences = getSharedPreferences("userSnapshot", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
