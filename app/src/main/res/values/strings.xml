@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Grahak Suraksha</string>
     <string name="onboarding_title3">I dream of a Digital India where Cyber Security become integral part of our National Security</string>
-    <string name="onboarding_title2">Get Fraud Activity alert</string>
-    <string name="onboarding_title1">I dream of a Digital India where Cyber Security become integral part of our National Security</string>
-    <string name="onboarding_title4">Get Fraud Activity alert</string>
+    <string name="onboarding_title2">Get Fraud Call and UPI  alert</string>
+    <string name="onboarding_title1">Report Fraudster with ease \n Save other </string>
+    <string name="onboarding_title4">Fraud Complain Portal</string>
 
     <string name="onboarding_des3">~Narendra Modi</string>
     <string name="onboarding_des2">Stay Safe Online</string>
-    <string name="onboarding_des1">~Narendra Modi</string>
-    <string name="onboarding_des4">Stay Safe Online</string>
+    <string name="onboarding_des1">Earn reward by helping</string>
+    <string name="onboarding_des4">and many more</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

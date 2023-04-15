@@ -8,9 +8,8 @@
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="398dp"
-        android:layout_height="105dp"
-        android:background="@drawable/bg2"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +51,6 @@
         app:layout_constraintVertical_bias="0.0"
 
         android:contentDescription="TODO" />
-<!--   todo app:srcCompat="@drawable/ic_back"-->
 
     <TextView
         android:id="@+id/textView35"
@@ -60,7 +58,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="76dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -70,7 +68,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintEnd_toStartOf="@+id/textView45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35"
@@ -82,7 +80,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintEnd_toStartOf="@+id/textView46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView39"
@@ -94,7 +92,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintEnd_toStartOf="@+id/textView48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView40" />
@@ -105,7 +103,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintEnd_toStartOf="@+id/textView47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView41" />
@@ -116,7 +114,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintEnd_toStartOf="@+id/textView49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
@@ -127,7 +125,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_transparent"
+        android:background="@drawable/curved_bottom_left_rectangle"
         app:layout_constraintEnd_toStartOf="@+id/textView50"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,10 +146,10 @@
 
     <TextView
         android:id="@+id/textView37"
-        android:layout_width="240dp"
-        android:layout_height="54dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_marginTop="76dp"
-        android:background="@drawable/button_circle"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
@@ -160,10 +158,10 @@
 
     <TextView
         android:id="@+id/textView45"
-        android:layout_width="240dp"
-        android:layout_height="54dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_circle"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -172,10 +170,10 @@
 
     <TextView
         android:id="@+id/textView46"
-        android:layout_width="240dp"
-        android:layout_height="54dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_circle"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -184,10 +182,10 @@
 
     <TextView
         android:id="@+id/textView47"
-        android:layout_width="240dp"
-        android:layout_height="54dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_circle"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -197,10 +195,10 @@
 
     <TextView
         android:id="@+id/textView49"
-        android:layout_width="240dp"
-        android:layout_height="54dp"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/button_circle"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView35"
@@ -208,25 +206,25 @@
 
     <TextView
         android:id="@+id/textView50"
-        android:layout_width="240dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_circle"
+        android:layout_width="221dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView35"
-        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+        app:layout_constraintTop_toBottomOf="@+id/textView61" />
 
     <TextView
         android:id="@+id/textView48"
-        android:layout_width="240dp"
+        android:layout_width="215dp"
         android:layout_height="54dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_circle"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/curved_bottom_right_rectangle"
         android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/textView35"
         app:layout_constraintTop_toBottomOf="@+id/textView46" />
 
@@ -305,7 +303,7 @@
         android:id="@+id/textView55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DISPATCH DATE"
+        android:text="Timing of fraud"
         android:textAllCaps="true"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -318,6 +316,7 @@
         android:id="@+id/textView56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:text="Complaint Status"
         android:textAllCaps="true"
         android:textSize="16sp"
@@ -331,7 +330,7 @@
         android:id="@+id/textView57"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="26-AUG-2022"
+        android:text="15-APR-2023"
         android:textAllCaps="true"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -370,7 +369,7 @@
         android:id="@+id/textView60"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rs 17000"
+        android:text="Rs 10,000"
         android:textAllCaps="true"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -383,7 +382,7 @@
         android:id="@+id/textView61"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="29-AUG-2022"
+        android:text="02:10 PM"
         android:textAllCaps="true"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -396,7 +395,7 @@
         android:id="@+id/textView62"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settled"
+        android:text="On progress"
 
         android:textSize="16sp"
         android:textStyle="bold"

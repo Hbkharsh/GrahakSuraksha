@@ -54,6 +54,7 @@ public class OnboardingActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         });
+
         nextbtn.setOnClickListener((view) -> {
             viewPager.setCurrentItem(currentPosition + 1);
             });

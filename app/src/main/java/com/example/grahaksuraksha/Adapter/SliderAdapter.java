@@ -23,13 +23,13 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.onb3, R.drawable.onb2, R.drawable.onb1, R.drawable.onb1
     };
     int headings[] = {
-            R.string.onboarding_title3, R.string.onboarding_title2, R.string.onboarding_title1, R.string.onboarding_title1
+            R.string.onboarding_title3, R.string.onboarding_title2, R.string.onboarding_title1, R.string.onboarding_title4
     };
     int descriptions[] = {
             R.string.onboarding_des3,
             R.string.onboarding_des2,
             R.string.onboarding_des1,
-            R.string.onboarding_des1
+            R.string.onboarding_des4
     };
     @Override
     public int getCount() {
